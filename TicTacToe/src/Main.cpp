@@ -6,32 +6,30 @@
  */
 
 #include <iostream>
+#include <string>
+#include "Spielfeld.h"
 using namespace std;
 
 int main() {
-	cout << "############################################################" << endl;
-	cout << "|                    Tic Tac Toe                           |" << endl;
-	cout << "############################################################" << endl;
 
-	cout << endl;
-	cout << "Spieler 1: X" << endl;
-	cout << "Spieler 2: O" << endl;
-	cout << endl;
+	string eingabe;
 
-	cout << "                   1         2         3                   " << endl;
-	cout << "              #---------#---------#---------#              " << endl;
-	cout << "              |         |         |         |              " << endl;
-	cout << "            1 |         |         |         |              " << endl;
-	cout << "              |         |         |         |              " << endl;
-	cout << "              #---------#---------#---------#              " << endl;
-	cout << "              |         |         |         |              " << endl;
-	cout << "            2 |         |         |         |              " << endl;
-	cout << "              |         |         |         |              " << endl;
-	cout << "              #---------#---------#---------#              " << endl;
-	cout << "              |         |         |         |              " << endl;
-	cout << "            3 |         |         |         |              " << endl;
-	cout << "              |         |         |         |              " << endl;
-	cout << "              #---------#---------#---------#              " << endl;
+	while (true) {
+
+		cin >> eingabe;
+
+		if (eingabe == "start") {
+			Spielfeld* spielfeld = new Spielfeld();
+			spielfeld->zeichnen();
+		} else if (eingabe == "ende") {
+			exit(0);
+		} else {
+			cout << "Fehler!" << endl;
+		}
+
+	}
+
+	return 0;
 
 }
 
